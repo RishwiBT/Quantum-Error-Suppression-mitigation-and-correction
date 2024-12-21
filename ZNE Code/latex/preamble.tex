@@ -1,0 +1,343 @@
+\usepackage{graphicx,graphics,epsfig,subfigure,times,bm,bbm,amssymb,amsmath,amsfonts,amsthm,amscd,mathrsfs,MnSymbol,accents}
+\usepackage[matrix,frame,arrow]{xypic}
+\usepackage[pdftex]{color}
+
+\usepackage{braket}%Dirac Notation in QM
+\usepackage{enumerate}
+\input{Qcircuit.tex} %Quantum Circuits
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage[counter-within=section,counter-format=ch.se.qu]{exsheets}
+\usepackage{makeidx}
+\usepackage[pdfstartview=FitH]{hyperref}
+\hypersetup{
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=cyan,          % color of internal links
+    citecolor=magenta,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=cyan,           % color of external links
+    runcolor=cyan
+}
+\usepackage[capitalise]{cleveref}
+\usepackage{cancel}
+\usepackage{mathtools}
+
+\renewcommand*{\theHsection}{\thesection}
+\renewcommand*{\theHsubsection}{\thesubsection}
+\usepackage{hypernat}
+\usepackage{environ}
+\usepackage{ragged2e}
+\usepackage{caption}
+
+
+
+% Define a new environment for tables with customized captions
+\newenvironment{mytable}
+  {% Begin code
+   \begin{table}[ht]
+   \centering
+  }
+  {% End code
+   \end{table}
+  }
+
+%% Override the caption formatting of cup6a
+\makeatletter
+\long\def\make@table@caption#1#2{\vskip 10\p@%
+    \setbox\@tempboxa\hbox{{\rm #1.\hspace{0.5em}\itshape #2}}%
+    \ifdim \wd\@tempboxa >\hsize
+    { \rm #1.\hspace{0.5em}{\itshape #2}\par}%
+    \else
+    \ifSFB@indentsty
+    \hbox to\hsize{\box\@tempboxa\hfill}\par
+    \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}\par
+    \fi
+    \fi
+    \vspace*{2.5\p@}\par
+}
+\makeatother
+
+% Custom command to create a caption with specific formatting
+\newcommand{\mycaption}[1]{%
+  \caption{%
+     #1
+}%
+}
+
+\makeindex
+
+\usepackage{paralist} 
+\usepackage{psfrag} 
+\usepackage{cupbookpatch11}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage[PetersLenny]{fncychap}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\setlength{\unitlength}{1cm}
+
+\setlength{\marginparwidth}{1.5in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{6in}
+\setlength{\topmargin}{-.5in}
+\setlength{\oddsidemargin}{.16in}
+\setlength{\evensidemargin}{.2in} 
+\setlength{\headsep}{.5in} 
+\setlength{\parindent}{1.5pc}
+
+\renewcommand{\baselinestretch}{1.02}
+\newcommand{\HRule}{\hskip -.6cm \rule{\linewidth}{0.2mm}}
+
+%superscript footnote
+\makeatletter
+\def\@makefnmark{\hbox{\@textsuperscript{\normalfont\@thefnmark}}}
+\makeatother
+
+% for algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{mydef}{Definition}[section]
+\newtheorem{col}{Corollary}[section]
+\newtheorem{pos}{Postulate}[section]
+
+\newtheorem{mytheorem}{Theorem}[section]
+\newtheorem{mylemma}{Lemma}[section]
+\newtheorem{mycorollary}{Corollary}[section]
+\newtheorem{myproposition}{Proposition}[section]
+\newtheorem{myclaim}{Claim}[section]
+\newtheorem{mydefinition}{Definition}[section]
+\newtheorem{myassumption}{Assumption}[section]
+\newtheorem{mypostulate}{Postulate}[]
+
+% Primed postulates
+\makeatletter
+\newcommand{\neutralize}[1]{\expandafter\let\csname c@#1\endcsname\count@}
+\makeatother
+
+\newenvironment{mypostulateDM}[1]
+{\renewcommand{\thepos}{\ref*{#1}$'$}%
+    \neutralize{ps}\phantomsection%
+    \begin{pos}}%
+    {\end{pos}}%
+
+\newenvironment{mypostulateDM2}[1]
+{\renewcommand{\thepos}{\ref*{#1}$''$}%
+    \neutralize{ps}\phantomsection%
+    \begin{pos}}%
+    {\end{pos}}%
+
+\newcommand{\msf}{\mathsf}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mbb}{\mathbb}
+\newcommand{\mc}{\mathcal}
+\newcommand{\tx}[1]{\text{#1}}
+\newcommand{\derv}[3]{\frac{d^{#3}#1}{d#2^{#3}}}					% DERIVATIVE
+\newcommand{\pdv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\half}{\tfrac{1}{2}}
+
+\newcommand{\bes} {\begin{subequations}}
+\newcommand{\ees} {\end{subequations}}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ea}{\end{eqnarray}}
+\newcommand{\bea} {\begin{eqnarray}}
+\newcommand{\eea} {\end{eqnarray}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+
+\newcommand{\red}[1]{\textcolor{red}{#1}} 
+\newcommand{\green}[1]{\textcolor{black}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\expv}[1]{\langle #1\rangle}							% EXPECTATION VALUE
+\newcommand{\ph}{\ensuremath{\varphi}}
+\newcommand{\eps}{\ensuremath{\varepsilon}} %"nice" epsilon
+\newcommand{\prima}[1]{\ensuremath{#1^\prime}} %add a prime to something
+\newcommand{\R}{\ensuremath{\mathbb{R}}} %real numbers
+\newcommand{\C}{\ensuremath{\mathbb{C}}} %complex numbers
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}} %rational numbers
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}} %integers
+\newcommand{\N}{\ensuremath{\mathbb{N}}} %natural numbers
+\newcommand{\e}{\ensuremath{{e}}} %e:=lim_{n\to\infty}(1+1/n)^n
+\newcommand{\ii}{\ensuremath{{i}}}%i:=\sqrt{-1}
+\newcommand{\abs}[1]{\ensuremath{\left|#1\right|}} %absolute value
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}} %norm
+\newcommand{\opU}{\ensuremath{{{U}}}}
+\newcommand{\opH}{\ensuremath{{{H}}}}
+\newcommand{\dfsh}{\mathrm{DFS}}
+\newcommand{\mcal}[1]{\mathcal{#1}}
+\newcommand{\ma}[1]{\mathcal{#1}}
+\newcommand{\expect}[3]{\<{#1}|{#2}|{#3}\>}
+\newcommand{\ave}[1]{\<{#1}\>}
+\newcommand{\sinc}{\mathrm{sinc}}
+\newcommand{\comm}[2]{\left[ #1, #2 \right]}
+\newcommand{\acomm}[2]{\left\{ #1, #2 \right\}}
+\newcommand{\grad}{\vec{\nabla}}
+\newcommand{\bqty}[1]{\left( #1 \right)}
+\newcommand{\Bqty}[1]{\left\{ #1 \right\}}
+\newcommand{\pqty}[1]{\left( #1 \right)} % Define the \pqty command
+\newcommand{\Pqty}[1]{\left[ #1 \right]} % Define the \Pqty command
+\newcommand{\mel}[3]{\langle #1 | #2 | #3 \rangle}
+\newcommand{\dyad}[2]{
+  \if\relax\detokenize{#2}\relax
+    \ket{#1}\bra{#1} % Treat single input as double input
+  \else
+    \ket{#1}\bra{#2} % Treat double inputs normally
+  \fi
+} % Define the modified \dyad command
+
+\renewcommand{\Re}{\mathrm{Re}}
+\renewcommand{\Im}{\mathrm{Im}}
+
+\newcommand{\bp}{\bar{\psi}}
+
+\newcommand{\pen}[1]{\left(#1\right)}								% PARENTHESIS
+\newcommand{\ben}[1]{\left[#1\right]}								% BRACKETS
+\newcommand{\cen}[1]{\left\{#1\right\}}								% CURLY BRACKETS
+
+\newcommand{\ignore}[1]{}
+\newcommand{\ignoreforclass}[1]{}
+\newcommand{\mcHS}{\mathcal{H}_S}
+\newcommand{\mcHB}{\mathcal{H}_B}
+\newcommand{\mcHR}{\mathcal{H}_R}
+\newcommand{\mA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mB}{\mathcal{B}}
+\newcommand{\mC}{\mathcal{C}}
+\newcommand{\mG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mI}{\mathcal{I}}
+\newcommand{\mJ}{\mathcal{J}}
+\newcommand{\mK}{\mathcal{K}}
+\newcommand{\mL}{\mathcal{L}}
+\newcommand{\mN}{\mathcal{N}}
+\newcommand{\mO}{\mathcal{O}}
+\newcommand{\mP}{\mathcal{P}}
+\newcommand{\mQ}{\mathcal{Q}}
+\newcommand{\mU}{\mathcal{U}}
+\newcommand{\mV}{\mathcal{V}}
+\newcommand{\mZ}{\mathcal{Z}}
+
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\lU}{\Lambda_U}
+\newcommand{\tP}{\tilde{\Pi}}
+\newcommand{\rP}{\rho_{\Pi}}
+\newcommand{\rtP}{\rho_{\tP}}
+
+
+\newcommand{\bmL}{\boldsymbol{\mathcal{L}}}
+\newcommand{\bmN}{\boldsymbol{\mathcal{N}}}
+\newcommand{\pt}{\partial_t}
+\newcommand{\mrp}{\mathrm{p}}
+
+\newcommand{\Ad}{\mathrm{ad}}
+\newcommand{\mud}{\mu^{\mathrm{d}}}
+\newcommand{\mug}{\mu^{\mathrm{g}}}
+\DeclareMathOperator{\erf}{Erf}
+\DeclareMathOperator{\Lap}{Lap}
+\DeclareMathOperator{\Sp}{Span}
+\DeclareMathOperator{\tvec}{vec}
+
+%Greek Letters
+\def\a{\alpha}
+\def\b{\beta}
+\def\g{\gamma}
+\def\d{\delta}
+\def\e{\epsilon}
+\def\ve{\varepsilon}
+\def\z{\zeta}
+\def\h{\eta}
+\def\t{\theta}
+%\def\i{\iota}
+\def\k{\kappa}
+%\def\l{\lambda}
+\def\m{\mu}
+\def\n{\nu}
+\def\x{\xi}
+\def\p{\pi}
+\def\r{\rho}     %%%% IMPORTANT TEX NOTE: THE REDEFINITION FOR '\r' BREAKS THE ANGSTROM SYMBOL
+\def\s{\sigma}
+\def\ta{\tau}
+\def\u{\upsilon}
+\def\ph{\varphi}
+\def\c{\chi}
+\def\ps{\psi}
+\def\o{\omega}
+
+\def\G{\Gamma}
+\def\D{\Delta}
+\def\T{\Theta}
+\def\L{\Lambda}
+\def\X{\Xi}
+\def\P{\Pi}
+\def\S{\Sigma}
+\def\U{\Upsilon}
+\def\Ph{\Phi}
+\def\Ps{\Psi}
+\def\O{\Omega}
+
+%Some helpful quantum shortcuts
+\def\ox{\otimes}
+\def\>{\rangle}
+\def\<{\langle}
+\def\Tr{\mathrm{Tr}}
+\def\Pr{\mathrm{Pr}}
+\newcommand{\ketbra}[1]{|{#1}\>\!\<#1|}
+\newcommand{\bracket}[1]{\<{#1}|{#1}\>}
+\newcommand{\bk}[2]{\<{#1}|{#2}\>}
+\newcommand{\brak}[2]{\<{#1}|{#2}\>}
+\newcommand{\ketb}[2]{|{#1}\>\!\<#2|}
+\newcommand{\ketbsub}[3]{|{#1}\>_{#3}\<#2|}
+\newcommand{\ident}{\mathbb{}}
+\newcommand{\on}[1]{\|#1\|}
+
+\newcommand{\opI}{\ensuremath{{{I}}}}
+\newcommand{\opA}{\ensuremath{{{A}}}}
+\newcommand{\opB}{\ensuremath{{{B}}}}
+\newcommand{\opX}{\ensuremath{{{X}}}}
+\newcommand{\opY}{\ensuremath{{{Y}}}}
+\newcommand{\opZ}{\ensuremath{{{Z}}}}
+\newcommand{\opS}{\ensuremath{{{S}}}}
+\newcommand{\ee}{\ensuremath{{e}}} %e:=lim_{n\to\infty}(1+1/n)^n
+
+\def\lp{\left(}
+\def\rp{\right)}
+\def\ls{\left[}
+\def\rs{\right]}
+\def\lb{\left\{}
+\def\rb{\right\}}
+
+\newcommand{\tcU}{\tilde{\mathcal{U}}}
+\newcommand{\cV}{\mathcal{V}}
+\newcommand{\tcV}{\tilde{\mathcal{V}}}
+\newcommand{\rtcV}{\r_{\tcV}}
+\newcommand{\rcV}{\r_\cV}
+\newcommand{\sk}{\sigma_k}
+\newcommand{\tsk}{\tilde{\sk}}
+\newcommand{\cF}{\mathcal{F}}
+
+
+\def\dgr{\dagger}
+
+\def\Ito{It$\hat{\text{o}}$}
+
+\DeclareMathOperator*{\MapWith}{\to}
+
+\usepackage{tikz-cd}
+
+\newcounter{postulate}[section]
+\newenvironment{postulate}[1][]{\refstepcounter{postulate}\par\medskip
+   \textbf{Postulate~\thepostulate. #1} \rmfamily}{\medskip}
+
+
+%%%%%%%%%%%%%
